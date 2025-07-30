@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #7aacff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+    border: 20px solid #ffffff;
+    box-shadow: 10px 25px 30px rgba(30, 30, 200, 0.3);
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    position: relative;
+    flex: 0 0 100%;
+}
+.slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor : pointer;
+}
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(10, 102, 194, 0.85);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 1rem;
+}
+.slide:hover .overlay {
+    opacity: 1;
+    cursor: default;
+}
+.slide a:hover img {
+    opacity: 0.9;
+}
+.buttons {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 600px) {
+    .buttons button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.dots li.active {
+    width: 30px;
+}
